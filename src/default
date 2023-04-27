@@ -1,0 +1,14 @@
+server {
+    listen  80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+
+    server_name _;
+
+    location /web13 {
+        root /usr/share/nginx/html;
+        try_files $uri $uri/index.html $uri/ =404;
+        index index.html index.htm;    
+    }
+}
